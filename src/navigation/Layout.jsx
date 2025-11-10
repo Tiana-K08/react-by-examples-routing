@@ -1,4 +1,3 @@
-// --- Approach 3: Using createBrowserRouter and RouterProvider ---
 import { Outlet } from 'react-router-dom';
 
 import NavigationContainer from './NavigationContainer.jsx';
