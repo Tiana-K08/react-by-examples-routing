@@ -6,20 +6,22 @@
 // import About from './pages/About.jsx';
 // import Contact from './pages/Contact.jsx';
 
-// --- Approach 2: JSX-based route configuration with createBrowserRouter ---
-import {
-  createBrowserRouter,
-  RouterProvider,
-  createRoutesFromElements,
-  Route,
-} from 'react-router-dom';
+// export default function App() {
+//   return (
+//     <Router>
+//       <div className="page-wrapper">
+//         <NavigationContainer />
+//         <Routes>
+//           <Route path="/" element={<Homepage />} />
+//           <Route path="/about-me" element={<About />} />
+//           <Route path="/contact" element={<Contact />} />
+//         </Routes>
+//       </div>
+//     </Router>
+//   );
+// }
 
-import Layout from './navigation/Layout.jsx';
-import Homepage from './pages/Homepage.jsx';
-import About from './pages/About.jsx';
-import Contact from './pages/Contact.jsx';
-
-// --- Approach 3: Object-based route configuration with createBrowserRouter ---
+// --- Approach 2: Object-based route configuration with createBrowserRouter ---
 // import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // import Layout from './navigation/Layout.jsx';
@@ -27,18 +29,6 @@ import Contact from './pages/Contact.jsx';
 // import About from './pages/About.jsx';
 // import Contact from './pages/Contact.jsx';
 
-// --- Approach 2: JSX-based route configuration with createBrowserRouter ---
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route element={<Layout />}>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/about-me" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-    </Route>
-  )
-);
-
-// --- Approach 3: Object-based route configuration with createBrowserRouter ---
 // const router = createBrowserRouter([
 //   {
 //     path: '/',
@@ -51,22 +41,33 @@ const router = createBrowserRouter(
 //   },
 // ]);
 
-export default function App() {
-  // --- Approach 1: Component-based routing with BrowserRouter ---
-  // return (
-  //   <Router>
-  //     <div className="page-wrapper">
-  //       <NavigationContainer />
-  //       <Routes>
-  //         <Route path="/" element={<Homepage />} />
-  //         <Route path="/about-me" element={<About />} />
-  //         <Route path="/contact" element={<Contact />} />
-  //       </Routes>
-  //     </div>
-  //   </Router>
-  // );
+// export default function App() {
+//   return <RouterProvider router={router} />;
+// }
 
-  // --- Approach 2: JSX-based route configuration with createBrowserRouter ---
-  // --- Approach 3: Object-based route configuration with createBrowserRouter ---
+// --- Approach 3: JSX-based route configuration with createBrowserRouter ---
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from 'react-router-dom';
+
+import Layout from './navigation/Layout.jsx';
+import Homepage from './pages/Homepage.jsx';
+import About from './pages/About.jsx';
+import Contact from './pages/Contact.jsx';
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<Layout />}>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/about-me" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+    </Route>
+  )
+);
+
+export default function App() {
   return <RouterProvider router={router} />;
 }
