@@ -35,8 +35,8 @@
 //     element: <Layout />,
 //     children: [
 //       { index: true, element: <Homepage /> },
-//       { path: '/about-me', element: <About /> },
-//       { path: '/contact', element: <Contact /> },
+//       { path: 'about-me', element: <About /> },
+//       { path: 'contact', element: <Contact /> },
 //     ],
 //   },
 // ]);
@@ -60,10 +60,10 @@ import Contact from './pages/Contact.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<Layout />}>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/about-me" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Homepage />} />
+      <Route path="about-me" element={<About />} />
+      <Route path="contact" element={<Contact />} />
     </Route>
   )
 );
