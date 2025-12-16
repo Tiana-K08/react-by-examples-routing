@@ -3,7 +3,10 @@
 
 // import Navbar from './navigation/Navbar.jsx';
 // import Homepage from './pages/Homepage.jsx';
-// import About from './pages/About.jsx';
+// import AboutLayout from './pages/about/AboutLayout.jsx';
+// import AboutIndex from './pages/about/AboutIndex.jsx';
+// import Education from './pages/about/Education.jsx';
+// import Experience from './pages/about/Experience.jsx';
 // import Contact from './pages/Contact.jsx';
 
 // export default function App() {
@@ -15,7 +18,11 @@
 //       <main>
 //         <Routes>
 //           <Route path="/" element={<Homepage />} />
-//           <Route path="/about-me" element={<About />} />
+//           <Route path="/about-me" element={<AboutLayout />}>
+//             <Route index element={<AboutIndex />} />
+//             <Route path="education" element={<Education />} />
+//             <Route path="experience" element={<Experience />} />
+//           </Route>
 //           <Route path="/contact" element={<Contact />} />
 //         </Routes>
 //       </main>
@@ -27,9 +34,12 @@
 // --- Approach 2: Object-Based Routing Configuration with the Data API ---
 // import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// import Layout from './navigation/Layout.jsx';
+// import Layout from './layout/Layout.jsx';
 // import Homepage from './pages/Homepage.jsx';
-// import About from './pages/About.jsx';
+// import AboutLayout from './pages/about/AboutLayout.jsx';
+// import AboutIndex from './pages/about/AboutIndex.jsx';
+// import Education from './pages/about/Education.jsx';
+// import Experience from './pages/about/Experience.jsx';
 // import Contact from './pages/Contact.jsx';
 
 // const router = createBrowserRouter([
@@ -38,7 +48,15 @@
 //     element: <Layout />,
 //     children: [
 //       { index: true, element: <Homepage /> },
-//       { path: 'about-me', element: <About /> },
+//       {
+//         path: 'about-me',
+//         element: <AboutLayout />,
+//         children: [
+//           { index: true, element: <AboutIndex /> },
+//           { path: 'education', element: <Education /> },
+//           { path: 'experience', element: <Experience /> },
+//         ],
+//       },
 //       { path: 'contact', element: <Contact /> },
 //     ],
 //   },
@@ -56,16 +74,23 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import Layout from './navigation/Layout.jsx';
+import Layout from './layout/Layout.jsx';
 import Homepage from './pages/Homepage.jsx';
-import About from './pages/About.jsx';
+import AboutLayout from './pages/about/AboutLayout.jsx';
+import AboutIndex from './pages/about/AboutIndex.jsx';
+import Education from './pages/about/Education.jsx';
+import Experience from './pages/about/Experience.jsx';
 import Contact from './pages/Contact.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Homepage />} />
-      <Route path="about-me" element={<About />} />
+      <Route path="about-me" element={<AboutLayout />}>
+        <Route index element={<AboutIndex />} />
+        <Route path="education" element={<Education />} />
+        <Route path="experience" element={<Experience />} />
+      </Route>
       <Route path="contact" element={<Contact />} />
     </Route>
   )
