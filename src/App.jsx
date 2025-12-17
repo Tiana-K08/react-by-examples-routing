@@ -8,6 +8,9 @@
 // import Education from './pages/about/Education.jsx';
 // import Experience from './pages/about/Experience.jsx';
 // import Contact from './pages/Contact.jsx';
+// import BlogLayout from './pages/blog/BlogLayout.jsx';
+// import PostsList from './pages/blog/PostsList.jsx';
+// import PostItem from './pages/blog/PostItem.jsx';
 
 // export default function App() {
 //   return (
@@ -24,6 +27,10 @@
 //             <Route path="experience" element={<Experience />} />
 //           </Route>
 //           <Route path="/contact" element={<Contact />} />
+//           <Route path="/blog" element={<BlogLayout />}>
+//             <Route index element={<PostsList />} />
+//             <Route path="post/:postId" element={<PostItem />} />
+//           </Route>
 //         </Routes>
 //       </main>
 //       <footer>{/* <Footer /> */}</footer>
@@ -41,6 +48,9 @@
 // import Education from './pages/about/Education.jsx';
 // import Experience from './pages/about/Experience.jsx';
 // import Contact from './pages/Contact.jsx';
+// import BlogLayout from './pages/blog/BlogLayout.jsx';
+// import PostsList from './pages/blog/PostsList.jsx';
+// import PostItem from './pages/blog/PostItem.jsx';
 
 // const router = createBrowserRouter([
 //   {
@@ -58,6 +68,14 @@
 //         ],
 //       },
 //       { path: 'contact', element: <Contact /> },
+//       {
+//         path: 'blog',
+//         element: <BlogLayout />,
+//         children: [
+//           { index: true, element: <PostsList /> },
+//           { path: 'post/:postId', element: <PostItem /> },
+//         ],
+//       },
 //     ],
 //   },
 // ]);
@@ -81,6 +99,9 @@ import AboutIndex from './pages/about/AboutIndex.jsx';
 import Education from './pages/about/Education.jsx';
 import Experience from './pages/about/Experience.jsx';
 import Contact from './pages/Contact.jsx';
+import BlogLayout from './pages/blog/BlogLayout.jsx';
+import PostsList from './pages/blog/PostsList.jsx';
+import PostItem from './pages/blog/PostItem.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -92,6 +113,10 @@ const router = createBrowserRouter(
         <Route path="experience" element={<Experience />} />
       </Route>
       <Route path="contact" element={<Contact />} />
+      <Route path="blog" element={<BlogLayout />}>
+        <Route index element={<PostsList />} />
+        <Route path="post/:postId" element={<PostItem />} />
+      </Route>
     </Route>
   )
 );
